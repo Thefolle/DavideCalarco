@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - working-directory: davidecalarco
+        name: build
         run: |
           npm install --no-audit --no-fund
           npm run build
@@ -22,6 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - working-directory: davidecalarco
+        name: test
         run: |
           npm install --no-audit --no-fund
           npm run test
