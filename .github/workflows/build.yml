@@ -10,12 +10,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: .npm
+          cache: npm
           cache-dependency-path: davidecalarco/npm-shrinkwrap.json
       - working-directory: davidecalarco
         name: build
         run: |
-          npm ci --cache .npm --prefer-offline --no-audit --no-fund
+          npm ci --cache npm --prefer-offline --no-audit --no-fund
           npm run build
       - uses: actions/upload-artifact@v3
         with:
@@ -29,10 +29,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: .npm
+          cache: npm
           cache-dependency-path: davidecalarco/npm-shrinkwrap.json
       - working-directory: davidecalarco
         name: test
         run: |
-          npm ci --cache .npm --prefer-offline --no-audit --no-fund
+          npm ci --cache npm --prefer-offline --no-audit --no-fund
           npm run test
