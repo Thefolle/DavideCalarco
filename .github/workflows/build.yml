@@ -9,15 +9,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - working-directory: davidecalarco
-        run: npm install --no-audit --no-fund
-      - working-directory: davidecalarco
-        run: npm run build
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          path:
+            dist
   
   test-job:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - working-directory: davidecalarco
-        run: npm install --no-audit --no-fund
-      - working-directory: davidecalarco
-        run: npm run test
+        run: |
+          npm install --no-audit --no-fund
+          npm run test
