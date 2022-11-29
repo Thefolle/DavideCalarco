@@ -14,8 +14,8 @@ jobs:
           npm run build
       - uses: actions/upload-artifact@v3
         with:
-          path:
-            davidecalarco/dist
+          name: build output
+          path: davidecalarco/dist
   
   test-job:
     runs-on: ubuntu-20.04
