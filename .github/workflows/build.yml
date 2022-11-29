@@ -9,11 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - working-directory: davidecalarco
+        run: npm install
+      - working-directory: davidecalarco
         run: npm run build
   
   test-job:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - working-directory: davidecalarco
+        run: npm install
       - working-directory: davidecalarco
         run: npm run test
